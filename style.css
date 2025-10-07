@@ -1,0 +1,237 @@
+/* ===================== GLOBAL ===================== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(120deg, #e0f2ff, #f0f6ff);
+  color: #0f172a;
+}
+
+.cv-container {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  min-height: 100vh;
+}
+
+/* ===================== COLUMNA IZQUIERDA ===================== */
+.left-column {
+  background: linear-gradient(180deg, #3b82f6, #1e3a8a);
+  color: #fff;
+  padding: 40px 30px;
+}
+
+/* --- BLOQUE PERFIL CENTRADO --- */
+.left-column .profile {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.left-column .profile h1,
+.left-column .profile p,
+.left-column .profile a {
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+.left-column .profile h1 {
+  font-size: 2.4em; /* más grande que antes */
+  font-weight: 800; /* más grueso */
+}
+
+
+/* Retrasos escalonados */
+.left-column .profile h1 { animation-delay: 0.2s; }
+.left-column .profile p:nth-of-type(1) { animation-delay: 0.5s; }
+.left-column .profile p:nth-of-type(2) { animation-delay: 0.7s; }
+.left-column .profile p:nth-of-type(3) { animation-delay: 0.9s; }
+
+.left-column .profile a {
+  color: #cbd5f7;
+  text-decoration: none;
+}
+.left-column .profile a:hover {
+  color: #ffd700; /* dorado */
+  text-decoration: underline;
+}
+
+/* ===================== ICONOS Y CONTACTO ===================== */
+.contact-hover {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.contact-hover .icon {
+  font-size: 1.2em;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+/* Vibrar icono al hover */
+.contact-hover:hover .icon {
+  animation: vibrate 0.25s linear infinite;
+  color: #08f76c; /* verde vibrante */
+}
+
+/* ===================== H2 ICONOS ===================== */
+h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: white;
+  border-bottom: 2px solid #3b82f6;
+  padding-bottom: 5px;
+  margin-top: 25px;
+}
+
+/* Iconos de h2 vibran al hover */
+.icon {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 1.2em;
+  vertical-align: middle;
+  color: inherit;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+h2:hover .icon {
+  transform: scale(1.25) rotate(-5deg);
+  color: #08f76c;
+}
+
+/* ===================== LISTAS CON TICKS ===================== */
+.section ul {
+  list-style: none;
+  padding-left: 15px;
+}
+
+.section ul li::before {
+  content: "✔"; /* tick verde */
+  color: #22c55e;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  transition: transform 0.25s ease;
+}
+
+.section ul li:hover::before {
+  transform: scale(1.5);
+}
+
+/* ===================== COLUMNA DERECHA ===================== */
+.right-column {
+  background: linear-gradient(180deg, #f8fafc, #e0f2ff);
+  padding: 40px 50px;
+}
+
+.right-column h2 {
+  color: #1e3a8a;
+  border-bottom: 2px solid #3b82f6;
+  padding-bottom: 5px;
+}
+
+.job {
+  margin-bottom: 25px;
+}
+
+.job h3 {
+  margin: 0;
+  color: #2563eb;
+}
+
+.job span {
+  display: block;
+  font-size: 0.9em;
+  color: #475569;
+  margin-bottom: 10px;
+}
+
+/* ===================== TIPOGRAFÍA Y ESPACIADO ===================== */
+h1 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+p, li {
+  line-height: 1.5;
+}
+
+/* ===================== TIMELINE ===================== */
+.timeline {
+  position: relative;
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 3px solid #2563eb;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 25px;
+  padding-left: 10px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -28px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  background: #2563eb;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px #2563eb;
+}
+
+.timeline-content h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: #1e3a8a;
+  font-weight: bold;
+}
+
+.timeline-content p {
+  margin: 3px 0;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.en-curso {
+  color: #22c55e;
+  font-weight: bold;
+}
+
+.incompleto {
+  color: salmon;
+}
+
+/* ===================== ANIMACIÓN FADEUP ===================== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===================== KEYFRAMES VIBRATION ===================== */
+@keyframes vibrate {
+  0%   { transform: translateX(0); }
+  25%  { transform: translateX(-1px); }
+  50%  { transform: translateX(1px); }
+  75%  { transform: translateX(-1px); }
+  100% { transform: translateX(0); }
+}
+
+/* ===================== MEDIA QUERIES ===================== */
+@media (max-width: 900px) {
+  .cv-container {
+    grid-template-columns: 1fr;
+  }
+  .left-column, .right-column {
+    width: 100%;
+  }
+  .left-column {
+    text-align: center;
+  }
+}
