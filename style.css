@@ -1,7 +1,7 @@
 /* ===================== GLOBAL ===================== */
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Poppins", "Segoe UI", sans-serif;
   background: linear-gradient(120deg, #e0f2ff, #f0f6ff);
   color: #0f172a;
 }
@@ -35,11 +35,15 @@ body {
   opacity: 0;
   animation: fadeUp 0.8s ease forwards;
 }
-.left-column .profile h1 {
-  font-size: 2.4em; /* más grande que antes */
-  font-weight: 800; /* más grueso */
-}
 
+.left-column .profile h1 {
+  font-size: 2.4em;
+  font-weight: 800;
+  text-shadow: 
+    0 0 6px #60a5fa,
+    0 0 10px #93c5fd,
+    0 0 15px #bfdbfe;
+}
 
 /* Retrasos escalonados */
 .left-column .profile h1 { animation-delay: 0.2s; }
@@ -50,6 +54,7 @@ body {
 .left-column .profile a {
   color: #cbd5f7;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 .left-column .profile a:hover {
   color: #ffd700; /* dorado */
@@ -70,10 +75,11 @@ body {
   transition: transform 0.25s ease, color 0.25s ease;
 }
 
-/* Vibrar icono al hover */
-.contact-hover:hover .icon {
+/* Vibrar icono + texto al hover */
+.contact-hover:hover .icon,
+.contact-hover:hover strong {
   animation: vibrate 0.25s linear infinite;
-  color: #08f76c; /* verde vibrante */
+  color: #08f76c;
 }
 
 /* ===================== H2 ICONOS ===================== */
@@ -86,6 +92,7 @@ h2 {
   border-bottom: 2px solid #3b82f6;
   padding-bottom: 5px;
   margin-top: 25px;
+  transition: color 0.3s ease;
 }
 
 /* Iconos de h2 vibran al hover */
@@ -98,8 +105,10 @@ h2 {
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
-h2:hover .icon {
-  transform: scale(1.25) rotate(-5deg);
+/* Vibración en hover para icono y texto */
+h2:hover .icon,
+h2:hover {
+  animation: vibrate 0.25s linear infinite;
   color: #08f76c;
 }
 
@@ -110,7 +119,7 @@ h2:hover .icon {
 }
 
 .section ul li::before {
-  content: "✔"; /* tick verde */
+  content: "✔";
   color: #22c55e;
   display: inline-block;
   width: 1em;
@@ -134,6 +143,11 @@ h2:hover .icon {
   padding-bottom: 5px;
 }
 
+.right-column h2:hover {
+  animation: vibrate 0.25s linear infinite;
+  color: #2563eb;
+}
+
 .job {
   margin-bottom: 25px;
 }
@@ -152,8 +166,18 @@ h2:hover .icon {
 
 /* ===================== TIPOGRAFÍA Y ESPACIADO ===================== */
 h1 {
-  font-size: 1.8em;
+  font-size: 2.4em;
+  font-weight: 700;
   margin-bottom: 10px;
+  text-align: center;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-shadow: 
+    0 0 6px #60a5fa,
+    0 0 10px #93c5fd,
+    0 0 15px #bfdbfe;
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.1s;
 }
 
 p, li {
@@ -216,11 +240,10 @@ p, li {
 
 /* ===================== KEYFRAMES VIBRATION ===================== */
 @keyframes vibrate {
-  0%   { transform: translateX(0); }
-  25%  { transform: translateX(-1px); }
-  50%  { transform: translateX(1px); }
-  75%  { transform: translateX(-1px); }
-  100% { transform: translateX(0); }
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-1px); }
+  50% { transform: translateX(1px); }
+  75% { transform: translateX(-1px); }
 }
 
 /* ===================== MEDIA QUERIES ===================== */
