@@ -258,3 +258,27 @@ p, li {
     text-align: center;
   }
 }
+/* ===================== FOOTER ===================== */
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 0.85em;
+  color: grey;
+  font-style: italic;
+  background: transparent;
+  position: relative; /* se mantiene visible bajo el contenido */
+}
+
+.footer a {
+  color: grey;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.footer a:hover {
+  color: #ffd700; /* dorado al hover */
+}
+
+
